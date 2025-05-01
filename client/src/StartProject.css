@@ -1,0 +1,93 @@
+/* StartProject.css */
+.start-project-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f3e5f5, #e1bee7);
+    padding: 20px;
+  }
+  
+  .start-project-container {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .start-project-heading {
+    text-align: center;
+    font-size: 24px;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+  }
+  
+  .start-project-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .start-project-form input,
+  .start-project-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: none;
+  }
+  
+  .start-project-form button {
+    width: 100%;
+    background-color: #8e24aa;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-project-form button:hover {
+    background-color: #6a1b9a;
+  }
+  .project-list {
+    margin-top: 30px;
+  }
+  
+  .project-list h3 {
+    font-size: 20px;
+    color: #6a1b9a;
+    margin-bottom: 10px;
+  }
+  
+  .project-card {
+    background: #f9f6fb;
+    border: 1px solid #e1bee7;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .project-card h4 {
+    margin: 0 0 5px;
+    color: #4a148c;
+  }
+  
+  .project-card p {
+    margin: 0 0 10px;
+    color: #333;
+  }
+  
+  .project-card small {
+    font-size: 12px;
+    color: #777;
+  }
+    

@@ -1,20 +1,20 @@
 import React, { useState } from "react";
+import './TeamChat.css';
 
-// Helper function to filter messages based on search keyword
+
 const filterMessages = (messages, keyword) => {
   return messages.filter((m) =>
     m.text.toLowerCase().includes(keyword.toLowerCase())
   );
 };
 
-const TeamChat = ({ project, user, members }) => {
+const TeamChat = ({ project, user, members = [] }) => {
   const [messages, setMessages] = useState([]);
   const [msg, setMsg] = useState("");
-  const [search, setSearch] = useState("");  // Search functionality
-  const [domainFilter, setDomainFilter] = useState("All");  // Domain filter
-  const [groupSizeFilter, setGroupSizeFilter] = useState(0);  // Group size filter
+  const [search, setSearch] = useState(""); 
+  const [domainFilter, setDomainFilter] = useState("All");
+  const [groupSizeFilter, setGroupSizeFilter] = useState(0); 
 
-  // Function to send a message
   const sendMessage = () => {
     if (msg.trim()) {
       setMessages([
@@ -24,20 +24,15 @@ const TeamChat = ({ project, user, members }) => {
       setMsg("");
     }
   };
-
-  // Filtering messages based on the search keyword
   const filteredMessages = filterMessages(messages, search);
 
-  // Filter members based on domain and group size
   const filteredMembers = members
     .filter((member) => domainFilter === "All" || member.domain === domainFilter)
-    .filter((member, index, self) => 
-      groupSizeFilter === 0 || self.length <= groupSizeFilter
-    );
+    .filter((_, index, arr) => groupSizeFilter === 0 || arr.length <= groupSizeFilter);
 
   return (
     <div className="team-chat">
-      <h4>Chat: {project.title}</h4>
+      <h4>Chat: {project?.title || "Untitled Project"}</h4>
 
       <div className="filters">
         <div>
@@ -73,7 +68,7 @@ const TeamChat = ({ project, user, members }) => {
             id="groupSizeFilter"
             min="0"
             value={groupSizeFilter}
-            onChange={(e) => setGroupSizeFilter(e.target.value)}
+            onChange={(e) => setGroupSizeFilter(Number(e.target.value))}
             placeholder="Max group size"
           />
         </div>
@@ -84,7 +79,12 @@ const TeamChat = ({ project, user, members }) => {
           <p>No messages found.</p>
         ) : (
           filteredMessages.map((m, i) => (
-            <div key={i}>
+            <div
+              key={i}
+              className={`chat-msg ${
+                m.sender === user.username ? "own-msg" : "other-msg"
+              }`}
+            >
               <strong>{m.sender} ({m.gender}):</strong> {m.text}
             </div>
           ))

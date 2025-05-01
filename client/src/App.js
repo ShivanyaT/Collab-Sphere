@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./LoginForm.css"
 import "./index.css"
+import StartProject from './StartProject';
+import TeamChat from "./TeamChat";
+
 
 const Header = ({ toggleDarkMode, setPage }) => {
   return (
@@ -48,60 +51,86 @@ const Hero = () => {
     </section>
   );
 };
-
 // Explore Page
 const Explore = () => {
   const handleJoin = (projectName) => {
     alert(`🎉 Congratulations! You have successfully joined ${projectName}.`);
   };
 
+  const projects = [
+    {
+      name: "CodeSprout",
+      description:
+        "🌱 A beginner-friendly coding challenge app offering daily tasks and instant feedback to grow your skills.",
+      tags: ["#Web", "#JavaScript", "#Education"],
+      difficulty: "Beginner",
+    },
+    {
+      name: "LearnLoop",
+      description:
+        "🎓 A collaborative learning platform where users create, share, and complete interactive mini-courses.",
+      tags: ["#Education", "#React", "#Community"],
+      difficulty: "Intermediate",
+    },
+    {
+      name: "DataVista",
+      description:
+        "📊 A no-code data visualization tool that turns your CSV files into beautiful, interactive charts.",
+      tags: ["#DataViz", "#NoCode", "#Tools"],
+      difficulty: "Beginner",
+    },
+  ];
+
   return (
     <section id="explore" className="explore-page">
       <h2>Explore Projects</h2>
       <div className="projects">
-        {["Cosmic Quest", "ExoNav", "StarScope"].map((name, i) => (
+        {projects.map((project, i) => (
           <div className="project-card" key={i}>
-            <h3>{name}</h3>
-            <p>Project description for {name} goes here.</p>
-            <button onClick={() => handleJoin(name)}>Join Team</button>
+            <h3>{project.name}</h3>
+            <p>{project.description}</p>
+
+            <div className="tags" style={{ margin: '0.5rem 0' }}>
+              {project.tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  style={{
+                    background: "#e0e7ff",
+                    color: "#3730a3",
+                    padding: "2px 8px",
+                    marginRight: "6px",
+                    borderRadius: "12px",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div
+              className="difficulty"
+              style={{
+                backgroundColor: project.difficulty === "Beginner" ? "#d1fae5" : "#fef3c7",
+                color: project.difficulty === "Beginner" ? "#065f46" : "#92400e",
+                padding: "2px 10px",
+                borderRadius: "999px",
+                fontSize: "0.75rem",
+                display: "inline-block",
+                marginBottom: "8px",
+              }}
+            >
+              {project.difficulty}
+            </div>
+
+            <br />
+            <button onClick={() => handleJoin(project.name)}>Join Team</button>
           </div>
         ))}
       </div>
     </section>
   );
 };
-
-
-// Start Project Page
-const StartProject = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Project Created!");
-  };
-
-  return (
-    <section id="startProject" className="start-project-page">
-      <h2>Start a New Project</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Project Name" required />
-        <textarea placeholder="Project Description" required></textarea>
-        <button type="submit">Create Project</button>
-      </form>
-    </section>
-  );
-};
-
-// Team Chat Page
-const TeamChat = () => (
-  <section id="teamChat" className="team-chat-page">
-    <h2>Team Chat</h2>
-    <div className="chat-container">
-      <div className="chat-message">Welcome to the team chat!</div>
-      <input type="text" placeholder="Type a message..." />
-      <button>Send</button>
-    </div>
-  </section>
-);
 
 // Full Login Page
 const LoginForm = () => {
