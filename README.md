@@ -9,7 +9,7 @@ Collab-Sphere is a beginner-friendly open-source platform where developers can *
 
 ---
 
-## 🚀 Features
+## Features
 
 -  Explore community-driven projects
 -  Start your own open-source project
@@ -19,7 +19,7 @@ Collab-Sphere is a beginner-friendly open-source platform where developers can *
 -  Dark mode toggle
 
 ---
-#Collaborators
+## Collaborators
 
 -Shivanya Tomar
 
@@ -27,7 +27,7 @@ Collab-Sphere is a beginner-friendly open-source platform where developers can *
 
 -Shivan Waghule
 
-# License
+## License
 This project is open source and available under the MIT License.
 
 ## Tech Stack
