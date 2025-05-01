@@ -1,0 +1,411 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, p {
+  margin: 0.5em 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+/* Header Styles */
+header {
+  background-color: #007bff;
+  color: rgb(218, 203, 253);
+  padding: 1em 0;
+}
+
+header h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #0056b3;
+  border-radius: 5px;
+}
+
+.dark-mode-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #f1f1f1;
+  color: #1ea24c;
+  text-align: center;
+  padding: 5em 0;
+}
+
+.hero .clock {
+  font-size: 2em;
+  color: #007bff;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  color: #a5efb4;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #e9dcdc;
+  display: block;
+}
+
+.hero .btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: rgb(232, 209, 209);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin-top: 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Explore Page Styles */
+.explore-page {
+  background-color: #d39999;
+  padding: 4em 0;
+}
+
+.explore-page h2 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.project-card {
+  background-color: #e3d1dc;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.project-card p {
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+
+.project-card button {
+  width: 100%;
+  padding: 12px;
+}
+
+/* Start Project Page Styles */
+.start-project-page {
+  background-color: #bef1f4;
+  padding: 4em 0;
+}
+
+.start-project-page h2 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.start-project-page form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #e1f6d3;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.start-project-page form input,
+.start-project-page form textarea,
+.start-project-page form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.start-project-page form input,
+.start-project-page form textarea {
+  border: 1px solid #ddd;
+  font-size: 1.2em;
+}
+
+.start-project-page form button {
+  background-color: #121213;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-project-page form button:hover {
+  background-color: #0056b3;
+}
+
+/* Team Chat Page Styles */
+.team-chat-page {
+  background-color: #fff;
+  padding: 4em 0;
+}
+
+.team-chat-page h2 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.chat-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container .chat-message {
+  background-color: #eabec4;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.chat-container input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.chat-container button {
+  width: 15%;
+  padding: 12px;
+  background-color: #030303;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.chat-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  background-color: #f1f1f1;
+  padding: 1em;
+  text-align: center;
+  color: #777;
+  font-size: 1em;
+}
+/* Wrapper to center the login box */
+.login-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  background-color: #f0f2f5;
+}
+
+/* The actual login box */
+.login-form {
+  background-color: #fff;
+  padding: 2.5em;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Heading */
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #333;
+}
+
+/* Input fields */
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1em;
+  box-sizing: border-box;
+}
+
+/* Input focus effect */
+.login-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Forgot password link */
+.forgot-password {
+  font-size: 0.9em;
+  color: #007bff;
+  text-align: right;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Button row */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Shared button style */
+.login-form button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Login button */
+.login-button {
+  background-color: #7af167;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Register button */
+.register-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.register-button:hover {
+  background-color: #3bd25b;
+  transform: scale(1.05);
+}
+/* Explore project styles */
+.explore-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #e2d4db;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
